@@ -22,3 +22,17 @@ function play_audio(wavepath){
         }, error => {console.log('error is', error)})
     }
 }
+
+function play_video(videopath){
+    console.log(videopath);
+    let player = document.getElementById('global-video-player');
+    player.src = videopath;
+    player.style.display = 'block';
+    let play_promise = player.play();
+
+    if (play_promise != undefined){
+        play_promise.then(_ => {
+            console.log('video played');
+        }, error => {console.log('error is', error)});
+    }
+}
